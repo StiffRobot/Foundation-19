@@ -186,7 +186,7 @@
 	var/obj/structure/c_tray/connected = null
 	anchored = TRUE
 	var/cremating = FALSE
-	var/id = 1
+	var/id_tag = 1
 	var/locked = FALSE
 
 /obj/structure/crematorium/Destroy()
@@ -435,7 +435,7 @@
 	if(operating)
 		return
 	for(var/obj/structure/crematorium/C in range())
-		if (C.id == id_tag)
+		if (C.id_tag == id_tag)
 			if (!C.cremating)
 				C.cremate(user)
 	..() // sets operating for click cooldown.
